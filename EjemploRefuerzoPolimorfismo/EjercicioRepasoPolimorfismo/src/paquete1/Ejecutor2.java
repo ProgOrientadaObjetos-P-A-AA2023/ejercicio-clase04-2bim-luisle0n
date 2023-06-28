@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package paquete1;
 
 import java.util.ArrayList;
@@ -17,7 +13,6 @@ public class Ejecutor2 {
         String[] apellidos = {"Martinez", "Lyons", "Kim", "Tate", "Lee"};
         int[] edad = {9, 70, 35, 23, 10};
         double pasajeFijo = 0.4;
-        
         /*
         Generar un proceso que permita iterar los arreglos; el objetivo es 
         crear objetos de tipo Pasaje Menor de edad, Pasaje Normal, Pasaje 
@@ -37,7 +32,31 @@ public class Ejecutor2 {
         
         */
         // inicio de solución
-        
+          
+          
+        for (int i = 0; i < nombres.length; i++) {
+            if (edad[i] >= 0 && edad[i] <= 18) {
+                Persona persona1 = new Persona(nombres[i] + " " + apellidos[i], "", edad[i]);
+                PasajeMenorEdad menor1 = new PasajeMenorEdad(pasajeFijo);
+                menor1.establecerPersona(persona1);
+                pasajes.add(menor1);
+            }else if(edad[i] >18 && edad[i] <= 25){
+                 Persona persona2 = new Persona(nombres[i] + " " + apellidos[i], "", edad[i]);
+                 PasajeUniversitario universitario=new PasajeUniversitario(pasajeFijo);
+                 universitario.establecerPersona(persona2);
+                 pasajes.add(universitario);
+            }else if(edad[i] >25 && edad[i] < 65){
+                 Persona persona3 = new Persona(nombres[i] + " " + apellidos[i], "", edad[i]);
+                 PasajeNormal normal=new PasajeNormal(pasajeFijo);
+                 normal.establecerPersona(persona3);
+                 pasajes.add(normal);
+            }else if(edad[i] >=65){
+                 Persona persona4 = new Persona(nombres[i] + " " + apellidos[i], "", edad[i]);
+                 PasajeTerceraEdad terceraEda=new PasajeTerceraEdad(pasajeFijo);
+                 terceraEda.establecerPersona(persona4);
+                 pasajes.add(terceraEda);
+            }
+        }
         
         // fin  de solución
         

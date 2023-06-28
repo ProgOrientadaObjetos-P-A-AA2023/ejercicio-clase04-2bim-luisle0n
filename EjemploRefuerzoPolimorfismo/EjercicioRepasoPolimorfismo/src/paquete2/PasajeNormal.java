@@ -10,9 +10,10 @@ package paquete2;
  * @author reroes
  */
 public class PasajeNormal extends PasajeUrbano {
-    
+    private double  pasajeFijo;
     public PasajeNormal(double pasaje){
         super(pasaje);
+        pasajeFijo=pasaje;
     }
     
     
@@ -20,7 +21,14 @@ public class PasajeNormal extends PasajeUrbano {
     public String toString(){
         return String.format("Tipo de pasaje: Normal\n"
                 + "%s",
+                
                 super.toString()
                 );
     }
+
+    @Override
+    public  void establecerValorPasaje(){
+        valorPasaje=pasajeFijo;
+    }
+    
 }
